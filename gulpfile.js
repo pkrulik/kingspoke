@@ -32,15 +32,24 @@ var gulp = require('gulp'),
 			    }	        	
 	        			
 		    gulp.src('src/templates/' + fileName + '.handlebars')
-/*
-		        .pipe(headerfooter.header('./src/includes/header.html'))
-				.pipe(headerfooter.footer('./src/includes/footer.html'))
-*/
 		        .pipe( handlebars(landingPagesContent, options) )
 		        .pipe( rename("index.html") )
 		        .pipe( gulp.dest('build/' + fileName) )
 		        .pipe(notify( fileName + ' built'));
 				
+			
+/*
+			if (landingPagesContent.pageName == "index") {
+				
+			    gulp.src('src/templates/' + fileName + '.handlebars')
+			        .pipe( handlebars(landingPagesContent, options) )
+			        .pipe( rename("index.html") )
+			        .pipe( gulp.dest('build/') )
+			        .pipe(notify( fileName + ' built'));
+				
+			}
+*/
+			
 			if ( landingPagesContent.pageName == "work") {
 								
 				var projects = landingPages[i].projects

@@ -147,6 +147,25 @@
 	
 
 
+	function inputMailTo() {
+		
+		
+		console.log('inputMailTo')
+		
+		$('a.email-link').each(function() {
+			
+			var thisObject = $(this);
+			var emailAddress = thisObject.attr('data-name').split('').reverse().join('');
+			var department = thisObject.attr('data-department');
+			
+			console.log ()
+			
+			thisObject.attr('href', "mailto:" + emailAddress + "@kingspoke.co?subject=KINGSPOKE " +  department)
+			
+		})
+		
+		
+	}
 
 
 
@@ -270,6 +289,9 @@
 		
 		// call the slider on anything with the class of "slider"
 		$('.slider').slider();
+		
+		// replace the mailtos
+		inputMailTo();
 		
 		///////////////////////////////////////////////////
 		/// VIDEO CONTROLS ///////////////////////////////
