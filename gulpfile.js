@@ -11,13 +11,13 @@ var gulp = require('gulp'),
     minify = require('gulp-minify'),
     livereload = require('gulp-livereload'),
     cachebust = require('gulp-cache-bust'),
-    image = require('gulp-image'),
+    imagemin = require('gulp-imagemin');
     cleanCSS = require('gulp-clean-css'),
 	stripDebug = require('gulp-strip-debug');    
 
-	gulp.task('image', function () {
+	gulp.task('imagemin', function () {
 	  gulp.src('src/srcimgs/**/*')
-	    .pipe(image())
+	    .pipe(imagemin())
 	    .pipe(gulp.dest('build/img'));
 	});
 

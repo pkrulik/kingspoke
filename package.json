@@ -37,6 +37,7 @@
     "gulp-hb": "^6.0.2",
     "gulp-headerfooter": "^1.0.3",
     "gulp-image": "^4.2.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-minify": "^1.0.0",
     "gulp-notify": "^3.0.0",
