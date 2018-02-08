@@ -1,0 +1,36 @@
+{{> header}}
+	<div id = "ajax-wrapper">
+
+		<div itemscope itemtype="http://schema.org/CollectionPage" id = "work" class = "page-wrapper">
+
+			<div class = "content-wrapper">
+
+				<h1>{{pageName}}</h1>
+
+				<div class = "flex-two-col">
+
+					{{#each projects}}
+
+						<div itemscope itemtype="http://schema.org/CreativeWork" class = "scroll-reveal case-study-promo {{this.workPageContent.width}}">
+
+							<img title = "project thumbnail" description = "project thumbnail" itemprop="image" src="{{this.workPageContent.img}}">
+							<div class = "hover-state">
+								<div class = "vertical-center">
+									<h2 itemprop="name" class = "fade-in"> {{ this.client}} <span class="h-line"></span></h2>
+									<p itemprop="description" class = "tagline fade-in"> {{this.workPageContent.tagline}} </p>
+									<p itemprop="genre" class = "industry fade-in"> {{ this.workPageContent.industry }}</p>
+								</div>
+								<a itemprop="url" href = "../{{ this.workPageContent.pageName }}/index.html" data-type="page-transition">View Work</a>
+							</div>
+						</div>
+
+					{{/each}}
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</div> <!-- ajax-wrapper -->
+{{> footer}}

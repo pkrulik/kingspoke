@@ -1,0 +1,48 @@
+{
+  "name": "node-js-sample",
+  "version": "0.2.0",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp-less": "^3.3.2",
+    "handlebars-helpers": "^0.10.0"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-sample"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Mark Pundsack",
+  "contributors": [
+    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-cache-bust": "^1.1.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-hb": "^6.0.2",
+    "gulp-headerfooter": "^1.0.3",
+    "gulp-image": "^4.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify": "^1.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-refresh": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sitemap": "^4.2.0",
+    "gulp-watch": "^4.3.11"
+  }
+}

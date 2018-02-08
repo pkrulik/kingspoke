@@ -1,0 +1,696 @@
+	{{> header}}
+	
+	<div id = "ajax-wrapper">
+		<div id = "{{ workPageContent.pageName }}" class = "case-study" class = "page-wrapper">
+			
+						
+				
+				
+				 
+			 	<div class = "header-image">
+				 	<img src = "  {{caseStudyContent.headerImage}}  " />
+			 	</div>
+					
+					
+					
+				
+				<div class = "eighty-percent-width-wrapper scroll-reveal">
+					
+					
+					<p class = "capabilities"> {{ caseStudyContent.services }} </p>
+					<h1>{{ workPageContent.clientName }}</h1> 
+					
+				 	<p class = "intro">{{caseStudyContent.byline}}</p>
+				 	
+				 	{{#if caseStudyContent.link}}
+					 	<a class = "link" target = "_blank" href = "{{caseStudyContent.link}}">view the site<span></span></a>
+					{{/if}}
+					
+					
+					{{#if caseStudyContent.video.display}}
+						<div class = "case-study-brand-reel video-wrapper">
+						   
+							<div class = "video-controls" data-id = "brand-reel-video">
+								<button type="button" class="play-pause play play-button absolute-center"></button>
+								<div class ="scrubber-bar"><span></span></div>
+								<button type="button" class="full-screen"></button>
+							</div>
+							
+							<video class = "paused" data-id = "brand-reel-video" poster="{{caseStudyContent.video.poster}}" preload = "none" >
+							    <source src="  {{caseStudyContent.video.link}}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+							</video>
+					
+						</div>	
+					{{/if}}
+					
+					
+					
+				</div>
+			 
+			 
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 01 -</span>section one</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Intro</h3>
+						{{#each caseStudyContent.intro}}
+							<p>{{this}}</p>
+						{{/each}}
+					</div>
+					
+				</div> 
+				
+								
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 02 -</span>section two</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Challenge</h3>
+						{{#each caseStudyContent.challenge.copy}}
+							<p>{{this}}</p>
+						{{/each}}
+					</div>
+					
+				</div>
+				
+				
+			 {{#if caseStudyContent.challenge.assets.display}}
+				 {{#each caseStudyContent.challenge.assets.images}} 
+					
+					
+					
+					<div class = "flex-two-col scroll-reveal asset">
+						<div class = "full-width">
+							<div class = "vertical-center">
+								<img src=" {{this}} ">
+							</div>
+						</div>
+					</div>
+					
+					
+				{{/each}}
+			{{/if}}
+				
+
+
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 03 -</span>section three</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Insights</h3>
+						{{#each caseStudyContent.insights}}
+							<p>{{this}}</p>
+						{{/each}}
+					</div>
+					
+				</div>
+				
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 04 -</span>section four</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Solution</h3>
+						{{#each caseStudyContent.solution.copy}}
+							<p>{{this}}</p>
+						{{/each}}
+												
+					</div>
+					
+				</div>
+				
+			
+			<!-- print out all of the images in SOLUTIONS -->
+			 
+			 {{#each caseStudyContent.solution.assets}} 
+			 
+				{{#if this.imagesFullWidth}}
+				 
+					{{#each this.images}}
+						<div class = "flex-two-col scroll-reveal asset asset-image">
+							<div class = "full-width">
+								<div class = "vertical-center">
+									<img src=" {{ this }} ">
+								</div>
+							</div>
+						</div>
+					{{/each}}
+										
+				{{/if}}
+				
+				
+				{{#if this.imagesHalfWidth}}
+					<div class = "flex-two-col no-center-margin scroll-reveal asset asset-half-width-images">
+						
+						{{#each this.images}}
+							<div class = "half-width">
+								<div class = "vertical-center">
+									<img src=" {{this}} ">
+								</div>
+							</div>
+						{{/each}}
+					</div>
+				{{/if}}
+				
+				
+				{{#if this.video}}
+
+					
+					{{#if this.autoplay}}
+					
+						<div class = "case-study-brand-reel video-wrapper asset asset-video">
+						   							
+							<video class = "paused" autoplay loop muted data-id = " {{this.id}} " poster="  {{this.poster}}  " preload = "none" >
+							    <source src="  {{ this.url }}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+							</video>
+					
+						</div>	
+						
+						{{else}}
+						
+						<div class = "case-study-brand-reel video-wrapper asset asset-video">
+						   
+							<div class = "video-controls" data-id = " {{this.id}} ">
+								<button type="button" class="play-pause play play-button absolute-center"></button>
+								<div class ="scrubber-bar"><span></span></div>
+								<button type="button" class="full-screen"></button>
+							</div>
+							
+							<video class = "paused" data-id = " {{this.id}} " poster="  {{this.poster}}  " preload = "none" >
+							    <source src="  {{ this.url }}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+							</video>
+					
+						</div>	
+					
+					{{/if}}
+					
+
+
+
+				{{/if}}	
+				
+				
+				{{#if this.carousel}}
+				
+					<div class = "flex-two-col scroll-reveal asset asset-carousel">
+						<div class = "full-width">
+							<div class = "vertical-center">
+	
+								<div class = "slider" id = "slider-one">
+									<div class = "slider-wrapper">
+										<div class = "active-wrapper image-wrapper">
+											<ul>
+												
+												{{#each this.images}}
+													<li><img src=" {{this}} "></li>
+												{{/each}}
+
+												
+											</ul>
+										</div>
+										
+										
+										
+										<div class = "controls">
+											<div class = "controls-wrapper">
+												<button class = "back">back</button>
+												<div class = "counter">
+													<p><span class = "active-number">01</span> - <span class = "last-number">06</span></p>
+												</div>
+												<button class = "next">next</button>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				
+				{{/if}}
+								 				 
+			 {{/each}}
+			 
+			 
+			 
+
+				
+											
+											 				 
+				 <div class = "next-project">
+					 <a data-type="page-transition" href = "{{caseStudyContent.nextProject}}">see next project<span></span></a>
+				 </div>
+							
+				
+			
+		</div> <!-- page wrapper -->
+	</div> <!-- ajax wrapper -->	
+	
+	
+	
+	{{> footer}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!--
+	
+	
+	
+	
+	<div id = "ajax-wrapper">
+		<div id = "{{ pageName }}" class = "case-study" class = "page-wrapper">
+			
+						
+				
+				
+				 
+			 	<div class = "header-image">
+				 	<img src = "../img/hm-payson/hm-payson-header.jpg" />
+			 	</div>
+					
+					
+					
+				
+				<div class = "eighty-percent-width-wrapper scroll-reveal">
+					
+					
+					<h1>{{ clientName }}</h1> 
+					
+				 {{#each caseStudyContent}} 
+				 
+				 	
+					 				 
+				 	<p class = "intro">{{byline}}</p>
+				 {{/each}}
+					<div class = "case-study-brand-reel video-wrapper">
+					   
+						<div class = "video-controls" data-id = "brand-reel-video">
+							<button type="button" class="play-pause play play-button absolute-center"></button>
+							<div class ="scrubber-bar"><span></span></div>
+							<button type="button" class="full-screen"></button>
+						</div>
+						
+						<video class = "paused" data-id = "brand-reel-video" poster="../img/hm-payson/hm-payson-video-cover.jpg" preload = "none" >
+						    <source src="https://player.vimeo.com/external/226959572.hd.?s=45908508e3a7052112c59735bb302f6cb317d7bf&profile_id=175" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+						</video>
+				
+					</div>	
+				</div>
+			 
+			 
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 01 -</span>section one</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Intro</h3>
+						<p>HM Payson is a 160+ year wealth advisory firm headquartered in Poerland, Maine. Heralded as a beacon of safety during financial crises, HM Payson has withstood the test of time and has the honor of stewarding multi-generational wealth. </p>
+					</div>
+					
+				</div>
+								
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 02 -</span>section two</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Challenge</h3>
+						<p>HM Payson is a 160+ year wealth advisory firm headquartered in Poerland, Maine. Heralded as a beacon of safety during financial crises, HM Payson has withstood the test of time and has the honor of stewarding multi-generational wealth. </p>
+					</div>
+					
+				</div>
+						
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-1.jpg">
+						</div>
+					</div>
+				</div>
+				
+
+
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 03 -</span>section three</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Insights</h3>
+						<p>At the core of every relationship is trust. One that breaks in an instant while also taking years to foster. While the financial industry is saturated with trust driving CTA's, we our competitive audit, didn't find anyone owning the space. </p>
+					</div>
+					
+				</div>
+				
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					
+					<div class = "one-eighth-width">
+						<h2><span class = "number">- 04 -</span>section four</h2>
+					</div>
+					
+					<div class = "seven-eighth-width">
+						<h3>Solution</h3>
+						<p>Following an intensive 2-month strategic discovery, KINGSPOKE drove a brand overhaul that unified all client facing assets and evolved the brand perception. Culminating with the This is Trust video and ad campaign, HM Payson is marching with confidence into both local and new markets. </p>
+					</div>
+					
+				</div>
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-2.jpg">
+						</div>
+					</div>
+				</div>
+				
+								
+				
+						
+				<div class = "flex-two-col no-center-margin scroll-reveal">
+					<div class = "half-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-3.jpg">
+						</div>
+					</div>
+					<div class = "half-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-4.jpg">
+						</div>
+					</div>
+				</div>
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+
+							<div class = "slider" id = "slider-two">
+								<div class = "slider-wrapper">
+									<div class = "active-wrapper image-wrapper">
+										<ul>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+										</ul>
+									</div>
+									
+									
+									<div class = "controls">
+										<div class = "controls-wrapper">
+											<button class = "back">back</button>
+											<div class = "counter">
+												<p><span class = "active-number">01</span> - <span class = "last-number">06</span></p>
+											</div>
+											<button class = "next">next</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-5.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-6.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+
+							<div class = "slider" id = "slider-one">
+								<div class = "slider-wrapper">
+									<div class = "active-wrapper image-wrapper">
+										<ul>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+										</ul>
+									</div>
+									
+									
+									
+									<div class = "controls">
+										<div class = "controls-wrapper">
+											<button class = "back">back</button>
+											<div class = "counter">
+												<p><span class = "active-number">01</span> - <span class = "last-number">06</span></p>
+											</div>
+											<button class = "next">next</button>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+											
+											 				 
+				 <div class = "next-project">
+					 <a href = "#">see next project<span></span></a>
+				 </div>
+							
+				
+			
+		</div> <!-- page wrapper -->
+	</div> <!-- ajax wrapper -->	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!--
+	<div id = "ajax-wrapper">
+		<div id = "{{ pageName }}" class = "case-study" class = "page-wrapper">
+			
+						
+				
+				 {{#each caseStudyContent}} 
+				 
+				 	<div class = "header-image">
+					 	<img src = "../img/case-study-header-sterling.jpg" />
+				 	</div>
+					
+				 {{/each}}
+					
+			<div class = "content-wrapper">
+					
+				<h1>{{ clientName }}</h1>
+				 
+				 
+				 {{#each caseStudyContent}} 
+				 
+				 	<p class = "intro">{{ test }}</p>
+	
+					<div class = "case-study-brand-reel video-wrapper">
+					   
+						<div class = "video-controls" data-id = "brand-reel-video">
+							<button type="button" class="play-pause play play-button absolute-center"></button>
+							<div class ="scrubber-bar"><span></span></div>
+							<button type="button" class="full-screen"></button>
+						</div>
+						
+						<video class = "paused" data-id = "brand-reel-video" poster="" preload = "none" >
+						    <source src="https://player.vimeo.com/external/226959572.hd.?s=45908508e3a7052112c59735bb302f6cb317d7bf&profile_id=175" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+						</video>
+				
+					</div>	
+				 
+					<div class = "flex-two-col">
+						
+							
+							<div class = "half-width">
+								<div class = "vertical-center">
+									<h3>the challenge</h3>
+									<p class = "description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+								</div>
+							</div>
+							
+							<div class = "half-width">
+							 	<img src = "../img/sterling-rope-coil.jpg" />
+							</div>
+	
+							<div class = "half-width">
+							 	<img src = "../img/sterling-rope-coil.jpg" />
+							</div>
+							
+							<div class = "half-width">
+								<div class = "vertical-center">
+									<h3>the solution</h3>
+									<p class = "description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+								</div>
+							</div>
+						
+					</div>
+				 
+				 
+				 {{/each}}
+				 
+				 <div class = "next-project">
+					 <a href = "#">see next project<span></span></a>
+				 </div>
+							
+				
+			</div>
+		</div>
+	</div> <!-- ajax wrapper -->
+
+
+
+
+<!--
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-2.jpg">
+						</div>
+					</div>
+				</div>
+				
+								
+				
+						
+				<div class = "flex-two-col no-center-margin scroll-reveal">
+					<div class = "half-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-3.jpg">
+						</div>
+					</div>
+					<div class = "half-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-4.jpg">
+						</div>
+					</div>
+				</div>
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+
+							<div class = "slider" id = "slider-two">
+								<div class = "slider-wrapper">
+									<div class = "active-wrapper image-wrapper">
+										<ul>
+											<li><img src="../img/hm-payson/hm-payson-slider-3.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-2.jpg"></li>
+											<li><img src="../img/hm-payson/hm-payson-slider-1.jpg"></li>
+										</ul>
+									</div>
+									
+									
+									<div class = "controls">
+										<div class = "controls-wrapper">
+											<button class = "back">back</button>
+											<div class = "counter">
+												<p><span class = "active-number">01</span> - <span class = "last-number">06</span></p>
+											</div>
+											<button class = "next">next</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-5.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class = "flex-two-col scroll-reveal">
+					<div class = "full-width">
+						<div class = "vertical-center">
+							<img src="../img/hm-payson/hm-payson-6.jpg">
+						</div>
+					</div>
+				</div>
+-->

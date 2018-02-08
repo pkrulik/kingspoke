@@ -1,0 +1,86 @@
+	{{> header}}
+	
+	<div id = "ajax-wrapper">
+		
+		<div id = "how-we-work" class = "page-wrapper">
+		
+			
+			<div class = "intro scroll-reveal">
+				<div class = "content-wrapper">
+					<h1> {{ intro.header }} </h1>
+					<h2> {{ intro.subhead }} <span></span></h2>
+					<p class = "callout"> {{ intro.callout }}  </p>
+					{{#each intro.introText}}
+						<p>{{this}}</p>
+					{{/each}}
+				</div>
+			</div>
+			
+			<div class = "beliefs scroll-reveal">
+				<div class = "content-wrapper">
+					<h2> {{beliefs.header}} <span></span></h2>
+					<ol>
+						<li><span class = "number">01</span>Talking <span class = "font-change">with</span> people, not <span class = "font-change">at</span> people.</li>
+						<li><span class = "number">two</span>Solving problems, even if we’re not the solution.</li>
+						<li><span class = "number">III.</span>Making things people want <span class = "font-change">more than</span> making people want things.</li>
+						<li><span class = "number">4</span>We are all passionate thinkers <span class = "font-change">&</span> makers.</li>
+						<li><span class = "number">05<span></span></span>Always doing what is right for the client, even if that gets us fired.</li>
+						<li><span class = "number">SIX</span>Emotion builds loyalty.</li>
+						<li><span class = "number">VII</span>People make your brand.</li>
+						<li><span class = "number">8</span>No “Pitch Team.”</li>
+						<li><span class = "number">09<span></span></span>Bespoke & immersed teams solve big challenges with innovative ideas.</li>
+						<li><span class = "number">X</span>Empathy, approachability & collaboration.</li>
+					</ol>
+				</div>
+				
+				<div class = "yellow-box big"></div>
+				<div class = "yellow-box small"></div>
+			</div>
+			
+			
+			<div class = "integrated-experiences scroll-reveal">
+				<div class = "content-wrapper">
+					<h2>{{integrated-experiences.header.serif}} <span class = "font-change">{{integrated-experiences.header.sansSerif}}</span><span class = "pink-bar dark"></span><span class = "pink-bar light"></span></h2>
+					<p class = "callout">{{integrated-experiences.callOut}}</p>
+					{{#each integrated-experiences.text}}
+						<p>{{this}}</p>
+					{{/each}}
+				</div>
+				<div class = "venn-diagram-wrapper">
+					<div class = "strategic-partner circle">
+						<div class = "circle-content-wrapper">
+							<h3>{{integrated-experiences.vennDiagram.circle1.header}}</h3>
+							<p>{{integrated-experiences.vennDiagram.circle1.text}}</p>
+						</div>
+					</div>
+					<div class = "creative-team circle">
+						<div class = "circle-content-wrapper">
+							<h3>{{integrated-experiences.vennDiagram.circle2.header}}</h3>
+							<p>{{integrated-experiences.vennDiagram.circle2.text}}</p>
+						</div>
+					</div>
+					<div class = "production-team circle">
+						<div class = "circle-content-wrapper">
+							<h3>{{integrated-experiences.vennDiagram.circle3.header}}</h3>
+							<p>{{integrated-experiences.vennDiagram.circle3.text}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "challenger-brands scroll-reveal">
+				<div class = "content-wrapper">
+					<h2>{{challenger-brands.header.serif}} <span class = "font-change">{{challenger-brands.header.sansSerif}}</span><span class = "purple-bar dark"></span><span class = "purple-bar light"></span></h2>
+					<p class = "callout">{{challenger-brands.callOut}}</p>
+					<p>{{challenger-brands.text}}</p>
+					
+					<p class = "cta">{{cta.title}} <button><a href = "../contact/index.html" data-type="page-transition">{{cta.button}}<span class = "yellow"></span><span class = "black"></span></a></button></p>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+	
+	</div> <!-- ajax-wrapper -->
+	
+	{{> footer}}

@@ -1,0 +1,306 @@
+{{> header}}
+	<div id = "ajax-wrapper">
+		<div itemscope itemtype="http://schema.org/CreativeWork" id = "{{ workPageContent.pageName }}" class = "case-study" class = "page-wrapper">
+
+				<meta itemprop="keywords" content="{{metadata.keywords}}"/>
+
+
+
+			 	<div class = "header-image">
+				 	<img title = "{{metadata.imageTitle}}" description = "{{metadata.imageDescription}}" itemprop="thumbnailUrl" src = "  {{caseStudyContent.headerImage}}  " />
+			 	</div>
+
+
+
+			 	<div class = "case-study-content-wrapper">
+				 	<div class = "brush-stroke"> <img src = "../img/global/brushstroke.png"></div>
+			
+					<div class = "case-study-content-wrapper-background">
+						<div class = "eighty-percent-width-wrapper scroll-reveal">
+		
+		
+							<p itemprop="genre" class = "capabilities"> {{ caseStudyContent.services }} </p>
+							<h1 itemprop="name">{{ workPageContent.clientName }}</h1>
+		
+						 	<p class = "intro">{{caseStudyContent.byline}}</p>
+		
+						 	{{#if caseStudyContent.link}}
+							 	<a class = "link" target = "_blank" href = "{{caseStudyContent.link}}">view the site<span></span></a>
+							{{/if}}
+		
+		
+							{{#if caseStudyContent.video.display}}
+								<div class = "case-study-brand-reel video-wrapper">
+		
+									<div class = "video-controls" data-id = "brand-reel-video">
+										<button type="button" class="play-pause play play-button absolute-center"></button>
+										<div class ="scrubber-bar"><span></span></div>
+										<button type="button" class="full-screen"></button>
+									</div>
+		
+									<video class = "paused" data-id = "brand-reel-video" poster="{{caseStudyContent.video.poster}}" preload = "none" >
+									    <source src="  {{caseStudyContent.video.link}}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+									</video>
+		
+								</div>
+							{{/if}}
+		
+		
+		
+						</div>
+		
+		
+						<div class = "flex-two-col scroll-reveal">
+		
+							<div class = "one-eighth-width">
+								<h2><span class = "number">- 01 -</span>section one</h2>
+							</div>
+		
+							<div class = "seven-eighth-width">
+								<h3>Intro</h3>
+								{{#each caseStudyContent.intro}}
+									<p>{{this}}</p>
+								{{/each}}
+							</div>
+		
+						</div>
+		
+		
+						<div class = "flex-two-col scroll-reveal">
+		
+							<div class = "one-eighth-width">
+								<h2><span class = "number">- 02 -</span>section two</h2>
+							</div>
+		
+							<div class = "seven-eighth-width">
+								<h3>Challenge</h3>
+								{{#each caseStudyContent.challenge.copy}}
+									<p>{{this}}</p>
+								{{/each}}
+							</div>
+		
+						</div>
+		
+	
+					{{#if caseStudyContent.challenge.video.display}}
+						
+							<div itemscope itemtype="http://schema.org/VideoObject" class = "video-asset video-wrapper asset asset-video">
+	
+								<meta itemprop="name" content="{{ workPageContent.clientName }} Video"/>
+								<meta itemprop="contentURL" content="{{caseStudyContent.challenge.video.link}}"/>
+								<meta itemprop="thumbnailURL" content="{{caseStudyContent.challenge.video.poster}}"/>
+	
+<!--
+								<div class = "video-controls hide-controls-mobile" data-id = "{{caseStudyContent.challenge.video.id}}">
+									<button type="button" class="play-pause play play-button absolute-center"></button>
+									<div class ="scrubber-bar"><span></span></div>
+									<button type="button" class="full-screen"></button>
+								</div>
+-->
+		
+								
+								
+								<video class = "paused" autoplay loop muted  data-id = " {{caseStudyContent.challenge.video.id}} " preload = "none" poster="{{caseStudyContent.challenge.video.poster}}">
+								    <source src="  {{ caseStudyContent.challenge.video.link }}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+								</video>
+	
+							</div>
+						
+					{{/if}}
+					
+					
+					 {{#if caseStudyContent.challenge.assets.display}}
+						 						 
+						 {{#each caseStudyContent.challenge.assets.images}}
+		
+		
+		
+							<div class = "flex-two-col scroll-reveal asset">
+								<div class = "full-width">
+									<div class = "vertical-center">
+										<img title= “{{img.title}}” description=“{{img.description}}” src=" {{this}} ">
+									</div>
+								</div>
+							</div>
+		
+		
+						{{/each}}
+					{{/if}}
+		
+		
+		
+						<div class = "flex-two-col scroll-reveal">
+		
+							<div class = "one-eighth-width">
+								<h2><span class = "number">- 03 -</span>section three</h2>
+							</div>
+		
+							<div class = "seven-eighth-width">
+								<h3>Insights</h3>
+								{{#each caseStudyContent.insights}}
+									<p>{{this}}</p>
+								{{/each}}
+							</div>
+		
+						</div>
+		
+		
+		
+						<div class = "flex-two-col scroll-reveal">
+		
+							<div class = "one-eighth-width">
+								<h2><span class = "number">- 04 -</span>section four</h2>
+							</div>
+		
+							<div class = "seven-eighth-width">
+								<h3>Solution</h3>
+								{{#each caseStudyContent.solution.copy}}
+									<p itemprop="description">{{this}}</p>
+								{{/each}}
+		
+							</div>
+		
+						</div>
+		
+		
+					<!-- print out all of the images in SOLUTIONS -->
+		
+					 {{#each caseStudyContent.solution.assets}}
+		
+						{{#if this.imagesFullWidth}}
+		
+							{{#each this.images}}
+								<div class = "flex-two-col scroll-reveal asset asset-image">
+									<div class = "full-width">
+										<div class = "vertical-center">
+											<img title = "{{metadata.imageTitle}}" description = "{{metadata.imageDescription}}" src=" {{ this }} ">
+											<meta itemprop="image" content={{ this }} />
+										</div>
+									</div>
+								</div>
+							{{/each}}
+		
+						{{/if}}
+		
+		
+						{{#if this.imagesHalfWidth}}
+							<div class = "flex-two-col no-center-margin scroll-reveal asset asset-half-width-images">
+		
+								{{#each this.images}}
+									<div class = "half-width">
+										<div class = "vertical-center">
+											<img title = "{{metadata.imageTitle}}" description = "{{metadata.imageDescription}}" src=" {{this}} ">
+											<meta itemprop="image" content={{ this }} />
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						{{/if}}
+		
+		
+						{{#if this.video}}
+		
+		
+							{{#if this.autoplay}}
+		
+								<div itemscope itemtype="http://schema.org/VideoObject" class = "video-asset video-wrapper asset asset-video">
+		
+									<meta itemprop="name" content="{{ workPageContent.clientName }} Video"/>
+									<meta itemprop="contentURL" content="{{this.url}}"/>
+									<meta itemprop="thumbnailURL" content="{{this.poster}}"/>
+		
+									<video class = "paused" autoplay loop muted data-id = " {{this.id}} " poster="  {{this.poster}}  " preload = "none" >
+									    <source src="  {{ this.url }}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+									</video>
+		
+								</div>
+		
+								{{else}}
+		
+								<div itemscope itemtype="http://schema.org/VideoObject" class = "video-asset video-wrapper asset asset-video">
+		
+									<meta itemprop="name" content="{{ workPageContent.clientName }} Video"/>
+									<meta itemprop="contentURL" content="{{this.url}}"/>
+									<meta itemprop="thumbnailURL" content="{{this.poster}}"/>
+		
+									<div class = "video-controls" data-id = " {{this.id}} ">
+										<button type="button" class="play-pause play play-button absolute-center"></button>
+										<div class ="scrubber-bar"><span></span></div>
+										<button type="button" class="full-screen"></button>
+									</div>
+		
+									<video class = "paused" data-id = " {{this.id}} " poster="  {{this.poster}}  " preload = "none" >
+									    <source src="  {{ this.url }}  " type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+									</video>
+		
+								</div>
+		
+							{{/if}}
+		
+		
+		
+		
+						{{/if}}
+		
+		
+						{{#if this.carousel}}
+		
+							<div class = "flex-two-col scroll-reveal asset asset-carousel">
+								<div class = "full-width">
+									<div class = "vertical-center">
+		
+										<div class = "slider" id = "slider-one">
+											<div class = "slider-wrapper">
+												<div class = "active-wrapper image-wrapper">
+													<ul>
+		
+														{{#each this.images}}
+															<li><img title = "{{metadata.imageTitle}}" description = "{{metadata.imageDescription}}" src=" {{this}} "></li>
+														{{/each}}
+		
+		
+													</ul>
+												</div>
+		
+		
+		
+												<div class = "controls">
+													<div class = "controls-wrapper">
+														<button class = "back">back</button>
+														<div class = "counter">
+															<p><span class = "active-number">01</span> - <span class = "last-number">06</span></p>
+														</div>
+														<button class = "next">next</button>
+													</div>
+												</div>
+		
+											</div>
+										</div>
+		
+									</div>
+								</div>
+							</div>
+		
+						{{/if}}
+		
+					 {{/each}}
+		
+		
+		
+		
+		
+		
+		
+						 <div class = "next-project">
+							 <a data-type="page-transition" href = "{{caseStudyContent.nextProject}}">see next project<span></span></a>
+						 </div>
+					</div>
+			 	</div> <!-- end case-study-wrapper-->
+
+
+		</div> <!-- page wrapper -->
+	</div> <!-- ajax wrapper -->
+{{> footer}}
+
+
+
