@@ -11,8 +11,9 @@ var gulp = require('gulp'),
     minify = require('gulp-minify'),
     livereload = require('gulp-livereload'),
     cachebust = require('gulp-cache-bust'),
-    image = require('gulp-image');
-    
+    image = require('gulp-image'),
+    cleanCSS = require('gulp-clean-css'),
+	stripDebug = require('gulp-strip-debug');    
 
 	gulp.task('image', function () {
 	  gulp.src('src/srcimgs/**/*')
@@ -80,7 +81,8 @@ var gulp = require('gulp'),
 	gulp.task('js', function() {
 		
 		return gulp.src('src/js/main.js')
-// 			.pipe( minify() )
+			.pipe(stripDebug())
+			.pipe( minify() )
 			.pipe(cachebust({type: 'timestamp'}))
 		    .pipe( gulp.dest('build/js') )
 		    .pipe( livereload() )
@@ -93,7 +95,9 @@ var gulp = require('gulp'),
 		
 		return gulp.src('src/css/main.scss')
 			.pipe( sass() )
+			.pipe( cleanCSS() )
 			.pipe(cachebust({type: 'timestamp'}))
+			.pipe( rename("main-min.css") )
 			.pipe( gulp.dest('build/css/') )
 			.pipe( livereload() )
 			.pipe(notify('sass built'));

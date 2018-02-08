@@ -830,7 +830,7 @@
 				"client": "Cole Haan",
 				"metadata" : {
 					"title" : "KINGSPOKE Cole Haan Case Study",
-					"description" : "COLE HAAN - Maine Blue Sky",
+					"description" : "COLE HAAN - Blue Sky 2017",
 					"keywords" : "cole haan, shoes, case study, video production, branding, event production",
 					"imageTitle" : "Cole Haan Case Study Image",
 					"imageDescription" : "Cole Haan Case Study Image"
@@ -838,12 +838,12 @@
 				},
 
 				"workPageContent": {
-					"pageName": "cole-haan-maine-blue-sky",
+					"pageName": "cole-haan-blue-sky-2017",
 					"width": "half-width",
 					"clientName": "Cole Haan",
 					"projectName": "projectName",
 					"industry": "Fashion",
-					"tagline": "Maine Blue Sky",
+					"tagline": "Blue Sky 2017",
 					"img": "../img/work/work-promo-cole-haan-maine-blue-sky.jpg"
 				},
 

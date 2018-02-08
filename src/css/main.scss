@@ -203,7 +203,7 @@ $arrow-base-size-mobile: $button-size/4;
 	    .col {width:30%; }
 	}	
 	
-	body {border:20px solid $white; overflow-x:hidden;}
+	body {/* border:20px solid $white; */ overflow-x:hidden;}
 	
 	p {@include montserrat-light(); font-size:18px; color: $black; line-height:28px;}
 	
@@ -218,7 +218,7 @@ $arrow-base-size-mobile: $button-size/4;
 	
 	div {@include boxSizing();}
 	
-	footer {background:$white; padding:20px 00px;
+	footer {background:$white; padding:20px 50px;
 		img.footer-logo {width:300px;}
 		.details { text-align:right; width:40% !important;
 			
@@ -432,7 +432,10 @@ $arrow-base-size-mobile: $button-size/4;
 		}
 		
 	}
-	
+	@keyframes fadeIn {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}	
 	.case-study {
 		.eighty-percent-width-wrapper {padding:0 15% 0 15%; @include boxSizing(); margin:0px 0; background:white;}
 		.content-wrapper {}
@@ -445,7 +448,7 @@ $arrow-base-size-mobile: $button-size/4;
 		    &.asset {margin: 20px 0;}
 		}
 		.header-image {width:100%; display:block; position:fixed; left:0; z-index:-2000; top:0; overflow:hidden;
-			img {width:100%; height:auto; position:relative; top:0; left:0;}
+			img {height:auto; position:relative; top:0; left:0; animation: fadeIn 1s;}
 		}
 		.case-study-content-wrapper {margin-top:50vh;
 			.brush-stroke {width:100%; overflow:hidden; 
@@ -1214,7 +1217,7 @@ $arrow-base-size-mobile: $button-size/4;
 		// HOMEPAGE
 		#index {
 			.homepage-hero {
-				h1 {font-size:40px; margin:0; max-width:100%; line-height:50px;
+				h1 {font-size:40px; margin:0; max-width:100%; line-height:40px;
 					span.subhead {font-size:20px;}
 				}
 			}
