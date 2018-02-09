@@ -561,15 +561,35 @@ jQuery(document).ready(function(event){
 		
 		url = ('' == url) ? 'index.html' : url;
 		
-	  	var newSection = url.replace('/index.html', '').replace('../','');
 	  	var section = $('<div id = '+newSection+'"></div>');
 	  	
 	  	// clicking "back" to go to the homepage doesn't load the homepage content unless 
 	  	// we have this if statement
+	  	// inf url doesn't include /index.html then we need to add that in
+	  	
+	  	if (url.indexOf("index.html") < 0) {
+		  	
+		  	console.log('url does not have index.html')
+		  	var newSection = url.replace('../','').replace('/','');;
+		  	var sectionToLoad = url + "index.html #" + newSection
+		  	
+		  	
+	  	}
+	  	
+	  	
+	  	
+/*
 	  	if ( url == "../index/") {
 		  	var sectionToLoad = "../index/index.html #index" 
 		  	console.log ('HOMEPAGE')
-	  	} else {
+	  	} else if ( url == "../error/") {
+		  	var sectionToLoad = "../error/index.html #error" 
+		  	console.log ('error')
+	  	}
+*/
+	  	
+	  	else {
+		  	var newSection = url.replace('/index.html', '').replace('../','');
 		  	var sectionToLoad = url + " #" + newSection
 	  	}
 	  	 
@@ -590,7 +610,7 @@ jQuery(document).ready(function(event){
 	       // since we're ajaxing we need to get the user back to the top of the page
 	      window.scroll(0, 0);	      
 	      //if browser doesn't support CSS transitions - dont wait for the end of transitions
-	      var delay = ( transitionsSupported() ) ? 1200 : 0;
+	      var delay = ( transitionsSupported() ) ? 400 : 0;
 	      
 	      setTimeout(function(){
 		      

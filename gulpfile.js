@@ -13,13 +13,34 @@ var gulp = require('gulp'),
     cachebust = require('gulp-cache-bust'),
     imagemin = require('gulp-imagemin');
     cleanCSS = require('gulp-clean-css'),
+    sitemap = require('gulp-sitemap'),
 	stripDebug = require('gulp-strip-debug');    
 
+	
+	
+	
+	
+	
 	gulp.task('imagemin', function () {
 	  gulp.src('src/srcimgs/**/*')
 	    .pipe(imagemin())
 	    .pipe(gulp.dest('build/img'));
 	});
+	
+	
+	
+	
+	gulp.task('sitemap', function () {
+	    gulp.src('build/**/*.html', {
+	            read: false
+	        })
+	        .pipe(sitemap({
+	            siteUrl: 'http://www.kingspoke.co'
+	        }))
+	        .pipe(gulp.dest('build/'));
+	});	
+	
+	
 
 	gulp.task('generateHTML:allLandingPages', function() {  
 	
@@ -81,8 +102,10 @@ var gulp = require('gulp'),
 	gulp.task('js', function() {
 		
 		return gulp.src('src/js/main.js')
+/*
 			.pipe(stripDebug())
 			.pipe( minify() )
+*/
 			.pipe(cachebust({type: 'timestamp'}))
 		    .pipe( gulp.dest('build/js') )
 		    .pipe( livereload() )

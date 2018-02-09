@@ -327,14 +327,14 @@ $arrow-base-size-mobile: $button-size/4;
 		.content-wrapper {padding:0 0px 0 150px; @include boxSizing();}
 	
 		.homepage-hero {overflow:hidden; position:relative;  /* background:#9ba0dd; */ @include boxSizing(); 
-			h1 {margin:0; font-size:90px; line-height:80px; max-width:80%; color:$black;   -webkit-mask-image: url("../../build/img/home/texture.png"); mask-image: url("../../build/img/home/texture.png"); -webkit-mask-size: 50%; -webkit-mask-position:center; 
+			h1 {margin:0; font-size:90px; line-height:80px; max-width:80%; color:$black;   /* -webkit-mask-image: url("../../build/img/home/texture.png"); mask-image: url("../../build/img/home/texture.png"); -webkit-mask-size: 50%; -webkit-mask-position:center; */ opacity:.75;
 				span {
 					&.subhead {@include playfair-regular(); display:block; font-size:30px; line-height:30px; margin-bottom:20px;}
 					&.h-line {width:110px; height:3px; background:$black; display:inline-block; position:absolute; top:17px; margin:0 5px;}
 				} 
 			}
 			
-			#video-background { position: absolute; top:0; left:0; min-width: 100%; min-height: 100%; width: auto;  height: auto; opacity:.5;
+			#video-background { position: absolute; top:0; left:0; min-width: 100%; min-height: 100%; width: auto;  height: auto; opacity:1; z-index:-1;
 // 				-webkit-filter: brightness(2) contrast(1.5) sepia(1) hue-rotate(200deg) saturate(200%);
 			}	
 			
@@ -388,8 +388,8 @@ $arrow-base-size-mobile: $button-size/4;
 	
 	
 	
-	#work, #how-we-work, #who-we-are, #contact {
-		.content-wrapper {@include boxSizing(); padding:80px 70px 100px 70px;}
+	#work, #how-we-work, #who-we-are, #contact, #error {
+		.content-wrapper {@include boxSizing(); padding:100px 70px 100px 70px;}
 	}
 	
 	#work {background:url("../../build/img/work/work-background-texture.jpg"); background-size:cover;
@@ -433,8 +433,8 @@ $arrow-base-size-mobile: $button-size/4;
 		
 	}
 	@keyframes fadeIn {
-		from {opacity: 0;}
-		to {opacity: 1;}
+		from {opacity: 0; top:-100px;}
+		to {opacity: 1; top:0px;}
 	}	
 	.case-study {
 		.eighty-percent-width-wrapper {padding:0 15% 0 15%; @include boxSizing(); margin:0px 0; background:white;}
@@ -547,40 +547,6 @@ $arrow-base-size-mobile: $button-size/4;
 		
 	}
 	
-	#contact {/* padding-top:100px; */ background:url("../../build/img/contact/contact-background-texture.jpg"); background-size:cover;
-		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;}
-		.content-wrapper {}
-		.half-width {margin: 70px 0 !important; position:relative;
-			p { @include transition(all, .25s, ease-in-out);
-				&.title {@include playfair-regular(); font-size:40px; color:$black; z-index:2; position:relative; 
-					span {@include transition(all, .55s, ease-in-out);
-						&.h-line {width:13%; height:5px; background:$black; display:inline-block; position:relative; margin: 0px auto 7px auto;}
-						&.back-bar {height:60px; width:0px; display:block; top:0; left:-12px;  position:absolute; background:$black; z-index:-1; opacity:0;}
-					}
-				}
-				&.email {@include montserrat-black(); font-size:40px; color:$black; position:relative; z-index:2;
-					span {@include transition(all, .45s, ease-in-out);
-						&.back-bar {height:60px; width:450px; display:block; top:-15px; left:5px;  position:absolute; background:$white; z-index:-1; opacity:0;}
-					}
-					&:before {
-						content: "oc.ekopsgnik\0040" attr(data-name) ;
-						unicode-bidi: bidi-override;
-						direction: rtl;
-					}
-				}
-			}
-			a {position:absolute; top:0; left:0; width:100%; display:block; height:100%; text-indent:-10000px; z-index:10;}
-			&:hover {
-				>.title {color:$yellow;}
-				>.title > span.back-bar {opacity:1; width:450px;}
-				>.title > span.h-line {background:$white;}
-				>.email > span.back-bar {opacity:1; width:420px;}
-			}
-		}
-		
-
-		
-	}
 	
 	
 	#how-we-work { 
@@ -597,13 +563,16 @@ $arrow-base-size-mobile: $button-size/4;
 				
 			}
 			
-			.beliefs {background:url("../../build/img/how/how-beliefs-bg.jpg"); position:relative;
+			.beliefs {background:url("../../build/img/how/how-beliefs-bg.jpg"); background-size:cover; position:relative; overflow-y: visible;
+				img {
+					&#beach { position:absolute; bottom:-120px; right:40px; z-index:-1;}
+				}
 				.yellow-box {  border:3px solid; position:absolute; border-color:$yellow; opacity:.2;	-webkit-animation: border-color-change 2s infinite alternate; -moz-animation: border-color-change 2s infinite alternate; -ms-animation: border-color-change 2s infinite alternate; -o-animation: border-color-change 2s infinite alternate; animation: border-color-change 2s infinite alternate;
 					&.big {height:500px; width:60%; left: 10%; top:-50px;}
 					&.small {height:300px; width:40%; bottom:20%; right:5%;}
 				}			
 
-				.content-wrapper {padding:0px 250px 100px 70px; @include boxSizing();
+				.content-wrapper {padding:50px 250px 100px 70px; @include boxSizing();
 					h2 {@include playfair-bold(); display:inline-block; position:relative; z-index:2; font-size:50px; text-transform:lowercase; color:$yellow; margin:-40px 0px 50px 0;
 						span {top:10px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:$black; width:110%; display:block;}
 					}
@@ -657,7 +626,7 @@ $arrow-base-size-mobile: $button-size/4;
 				}
 			}
 			
-			.integrated-experiences {background:url("../../build/img/how/how-integrated-bg.jpg"); position:relative;
+			.integrated-experiences {background:url("../../build/img/how/how-integrated-bg.jpg"); background-size:cover; position:relative; z-index:-1;
 				.content-wrapper {padding:80px 250px 0px 70px; @include boxSizing();}
 				h2 {@include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2;
 					span {
@@ -848,6 +817,93 @@ $arrow-base-size-mobile: $button-size/4;
 			.border-box {height:100%; width:80%; border:3px solid; position:absolute; border-color:$yellow;}
 			
 		}
+	}
+	
+	
+	#contact {/* padding-top:100px; */ background:url("../../build/img/contact/contact-background-texture.jpg"); background-size:cover;
+		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;}
+		.content-wrapper {}
+		.half-width {margin: 70px 0 !important; position:relative;
+			p { @include transition(all, .25s, ease-in-out);
+				&.title {@include playfair-regular(); font-size:40px; color:$black; z-index:2; position:relative; 
+					span {@include transition(all, .55s, ease-in-out);
+						&.h-line {width:13%; height:5px; background:$black; display:inline-block; position:relative; margin: 0px auto 7px auto;}
+						&.back-bar {height:60px; width:0px; display:block; top:0; left:-12px;  position:absolute; background:$black; z-index:-1; opacity:0;}
+					}
+				}
+				&.email {@include montserrat-black(); font-size:40px; color:$black; position:relative; z-index:2;
+					span {@include transition(all, .45s, ease-in-out);
+						&.back-bar {height:60px; width:450px; display:block; top:-15px; left:5px;  position:absolute; background:$white; z-index:-1; opacity:0;}
+					}
+					&:before {
+						content: "oc.ekopsgnik\0040" attr(data-name) ;
+						unicode-bidi: bidi-override;
+						direction: rtl;
+					}
+				}
+			}
+			a {position:absolute; top:0; left:0; width:100%; display:block; height:100%; text-indent:-10000px; z-index:10;}
+			&:hover {
+				>.title {color:$yellow;}
+				>.title > span.back-bar {opacity:1; width:450px;}
+				>.title > span.h-line {background:$white;}
+				>.email > span.back-bar {opacity:1; width:420px;}
+			}
+		}
+		
+
+		
+	}
+
+
+	#error {/* padding-top:100px; */ background:url("../../build/img/contact/contact-background-texture.jpg"); background-size:cover;
+		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;
+			span.float-r {margin-left:60%}
+		}
+		h2 {@include playfair-bold(); color:$yellow; text-align:center; display:inline-block; position:relative; font-size:54px; text-transform:lowercase; z-index:2; margin:0 auto;
+			span {top:10px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:#999fdc; width:110%; display:block;}
+		}
+		.four-oh-four {margin:50px auto; display:block; width:50%; text-align:Center;
+			p {display:inline; font-size:120px; @include playfair-bold(); 
+				&#first-4 {color:$yellow; padding-top:-50px;}
+				&#o {color:green;
+					img.ks-logo {width:30%;}
+	
+				}
+				&#second-4 {color:#fda5cc; margin-top:50px;}
+			}
+		}
+		.content-wrapper {}
+		.half-width {margin: 70px 0 !important; position:relative;
+			p { @include transition(all, .25s, ease-in-out);
+				&.title {@include playfair-regular(); font-size:40px; color:$black; z-index:2; position:relative; 
+					span {@include transition(all, .55s, ease-in-out);
+						&.h-line {width:13%; height:5px; background:$black; display:inline-block; position:relative; margin: 0px auto 7px auto;}
+						&.back-bar {height:60px; width:0px; display:block; top:0; left:-12px;  position:absolute; background:$black; z-index:-1; opacity:0;}
+					}
+				}
+				&.email {@include montserrat-black(); font-size:40px; color:$black; position:relative; z-index:2;
+					span {@include transition(all, .45s, ease-in-out);
+						&.back-bar {height:60px; width:450px; display:block; top:-15px; left:5px;  position:absolute; background:$white; z-index:-1; opacity:0;}
+					}
+					&:before {
+						content: "oc.ekopsgnik\0040" attr(data-name) ;
+						unicode-bidi: bidi-override;
+						direction: rtl;
+					}
+				}
+			}
+			a {position:absolute; top:0; left:0; width:100%; display:block; height:100%; text-indent:-10000px; z-index:10;}
+			&:hover {
+				>.title {color:$yellow;}
+				>.title > span.back-bar {opacity:1; width:450px;}
+				>.title > span.h-line {background:$white;}
+				>.email > span.back-bar {opacity:1; width:420px;}
+			}
+		}
+		
+
+		
 	}
 	
 	

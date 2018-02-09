@@ -14,7 +14,7 @@
 				var slider = $(this);
 				var sliderControls = slider.find('.controls button')
 				var i = 0;
-				void 0
+				console.log(slider)
 				
 				var images = slider.find('.active-wrapper ul').clone();
 				
@@ -50,7 +50,7 @@
 				var lastItem = slider.find('.active-wrapper ul li.last');
 				var lastNumber = lastItem.attr('data-number')
 				
-				void 0
+				console.log(lastNumber)
 				
 				slider.find('span.last-number').html(lastNumber)
 				
@@ -76,7 +76,7 @@
 					// CLICK NEXT	
 					if ( $(this).hasClass('next') ) {
 						
-						void 0
+						console.log('click next')
 						
 						// only allow next to be clicked as many times as there are objects	
 						if ( !$(active).hasClass('last') ) {
@@ -90,7 +90,7 @@
 							
 							activeNumberWrapper.html(nextNumber)
 						
-							void 0
+							console.log(nextNumber)
 							
 						} 
 						
@@ -99,7 +99,7 @@
 					// CLICK BACK
 					else if ( $(this).hasClass('back') )	{
 						
-						void 0
+						console.log ('clicked back')
 						
 						// only allow next to be clicked as many times as there are objects	
 						if ( !$(active).hasClass('first') ) {
@@ -113,7 +113,7 @@
 							
 							activeNumberWrapper.html(prevNumber)
 						
-							void 0
+							console.log(nextNumber)
 							
 							
 							// make the last next-wrapper item show
@@ -150,7 +150,7 @@
 	function inputMailTo() {
 		
 		
-		void 0
+		console.log('inputMailTo')
 		
 		$('a.email-link').each(function() {
 			
@@ -158,7 +158,7 @@
 			var emailAddress = thisObject.attr('data-name').split('').reverse().join('');
 			var department = thisObject.attr('data-department');
 			
-			void 0
+			console.log ()
 			
 			thisObject.attr('href', "mailto:" + emailAddress + "@kingspoke.co?subject=KINGSPOKE " +  department)
 			
@@ -181,7 +181,7 @@
 
 			$('.sidebar').removeClass('half-width').addClass('full-width')
 			
-			void 0;
+			console.log('play video');
 			
 		}
 				
@@ -193,7 +193,7 @@
 			
 		  if (thisVideoObject.currentTime >= thisVideoObject.duration) {
 		  
-			 void 0;
+			 console.log('resetVideo');
 		
 			pauseVideo(id, playPause, thisVideo, thisVideoObject);
 			thisVideoObject.currentTime = 0;
@@ -221,7 +221,7 @@
 			
 			$('.sidebar').removeClass('full-width').addClass('half-width')
 
-			void 0;
+			console.log('pauseVideo');
 			
 		}
 		
@@ -230,7 +230,7 @@
 	
 	function updateScrubberBar () {
 		
-		void 0
+		console.log('updateScrubberBar')
 		
 	  // Calculate the slider value
 	  var value = (thisVideoObject.currentTime / thisVideoObject.duration) * 100;
@@ -242,7 +242,7 @@
 	
 	function updateVideoTime(id, playPause, thisVideo, thisVideoObject) {
 		
-	  void 0;
+	  console.log('udpateVideoTime');
 	  
 /*
 	  // Calculate the new time
@@ -271,7 +271,7 @@
 	
 	function hideControls() {
 		
-		void 0	
+		console.log('hideControls')	
 		$('.video-controls').addClass('invisible').removeClass('visible');
 		$('.video-details').addClass('invisible').removeClass('visible');
 		controlsVisible = false;
@@ -280,7 +280,7 @@
 	
 	function executeJS() {
 		
-		void 0
+		console.log('executeJS')
 		
 		
 		
@@ -300,7 +300,7 @@
 		///////////////////////////////////////////////////
 		if ( $(window).width() > 600 ) {
 		
-			void 0
+			console.log('windowwidth > 600')
 		
 			$('.video-controls').click(function(e){
 				
@@ -362,7 +362,7 @@
 				// click scrubber bar
 				else if ( $(e.target).hasClass('scrubber-bar') ) {
 					
-					void 0
+					console.log('scrubber-bar clicked')
 					
 					offset = $(scrubberBar).offset();
 				    left = (e.pageX - offset.left);
@@ -372,7 +372,7 @@
 					
 					thisVideoObject.currentTime = videoTime;
 					
-					void 0
+					console.log($(this))
 					
 				}
 				
@@ -487,13 +487,13 @@ jQuery(document).ready(function(event){
 		//detect which page has been selected
 		// ../work/index.html
 		var newPage = $(this).attr('href');
-		void 0
+		console.log('newPage ' + newPage)
 		
 		//if the page is not already being animated - trigger animation
 		if( !isAnimating ) changePage(newPage, true);
 		firstLoad = true;
 		
-		void 0
+		console.log('clicked' + newPage)
 		
 	});
 
@@ -515,8 +515,8 @@ jQuery(document).ready(function(event){
 		  // CHECK THIS IF ISSUES WITH PAGE LOADING ON BACK BUTTON
 		  newPage = "../" + newPageArray[newPageArray.length - 2] + "/" + newPageArray[newPageArray.length - 1];
   		 
-  		  void 0
-		  void 0
+  		  console.log("newPageArray " + newPageArray)
+		  console.log("newPage " + newPage)
 	
 	      if( !isAnimating  &&  newLocation != newPage ) changePage(newPage, false);
 	    
@@ -538,7 +538,7 @@ jQuery(document).ready(function(event){
 	    
 	    $('.loader').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 			$('.loader').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-	    	void 0
+	    	console.log('transition end')
 	    	
 	    	loadNewContent(url, bool);
 			newLocation = url;
@@ -557,40 +557,60 @@ jQuery(document).ready(function(event){
 
 	function loadNewContent(url, bool) {
 		
-		void 0
+		console.log('loadnewcontent')
 		
 		url = ('' == url) ? 'index.html' : url;
 		
-	  	var newSection = url.replace('/index.html', '').replace('../','');
 	  	var section = $('<div id = '+newSection+'"></div>');
 	  	
 	  	// clicking "back" to go to the homepage doesn't load the homepage content unless 
 	  	// we have this if statement
+	  	// inf url doesn't include /index.html then we need to add that in
+	  	
+	  	if (url.indexOf("index.html") < 0) {
+		  	
+		  	console.log('url does not have index.html')
+		  	var newSection = url.replace('../','').replace('/','');;
+		  	var sectionToLoad = url + "index.html #" + newSection
+		  	
+		  	
+	  	}
+	  	
+	  	
+	  	
+/*
 	  	if ( url == "../index/") {
 		  	var sectionToLoad = "../index/index.html #index" 
-		  	void 0
-	  	} else {
+		  	console.log ('HOMEPAGE')
+	  	} else if ( url == "../error/") {
+		  	var sectionToLoad = "../error/index.html #error" 
+		  	console.log ('error')
+	  	}
+*/
+	  	
+	  	else {
+		  	var newSection = url.replace('/index.html', '').replace('../','');
 		  	var sectionToLoad = url + " #" + newSection
 	  	}
 	  	 
 	  	
 	  	
-	  	void 0
-	  	void 0
-	  	void 0
-	  	void 0
+	  	console.log('url = ' + url)
+	  	console.log('newSection = ' + newSection)
+	  	console.log ('section = ' + section)
+	  	console.log ('sectionToLoad = ' + sectionToLoad)
   		
 	  	$('#ajax-wrapper').load(sectionToLoad, function(event){
 	      
 	      // load new content and replace <main> content with the new one
 // 	      $('#ajax-wrapper').html(sectionToLoad);
-	      void 0
+	      console.log('.load')
 	       sr.sync();
 	       
 	       // since we're ajaxing we need to get the user back to the top of the page
 	      window.scroll(0, 0);	      
 	      //if browser doesn't support CSS transitions - dont wait for the end of transitions
-	      var delay = ( transitionsSupported() ) ? 1200 : 0;
+	      var delay = ( transitionsSupported() ) ? 400 : 0;
 	      
 	      setTimeout(function(){
 		      
@@ -612,7 +632,7 @@ jQuery(document).ready(function(event){
 	      
 	      if(url!=window.location && bool){
 	        //add the new page to the window.history
-	        void 0
+	        console.log('add the new page to the window.history')
 	        //if the new page was triggered by a 'popstate' event, don't add it
 	        window.history.pushState({path: url},'',url);
 	      }
@@ -626,7 +646,7 @@ jQuery(document).ready(function(event){
 	function transitionsSupported() {
 		
 		return $('html').hasClass('csstransitions');
-		void 0
+		console.log('transitionsSupported')
 		
 	}
 	

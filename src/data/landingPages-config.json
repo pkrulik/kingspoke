@@ -1159,7 +1159,44 @@
 	}, 
 	
 	
-	
+	{
+		"pageName": "error",
+		"metadata" : {
+			"title" : "error",
+			"description" : "KINGSPOKE - 404",
+			"imageTitle" : "KINGSPOKE Contact 404 Image",
+			"imageDescription" : "KINGSPOKE Contact 404 Image"
+
+		},
+		"list" : [
+			{
+				"title" : "general inqueries",
+				"email" : "kateri@kingspoke.co",
+				"name" : "iretak",
+				"mailtolink" : "mailto:kateri@kingspoke.co?subject=KINGSPOKE General Inqueries"
+			},
+			{
+				"title" : "new business",
+				"email" : "todd@kingspoke.co",
+				"name" : "ddot",
+				"mailtolink" : "mailto:todd@kingspoke.co?subject=KINGSPOKE New Business"			
+			},
+			{
+				"title" : "press inqueries",
+				"email" : "press@kingspoke.co",
+				"name" : "sserp",
+				"mailtolink" : "mailto:press@kingspoke.co?subject=KINGSPOKE Press"			
+			},
+			{
+				"title" : "careers",
+				"email" : "careers@kingspoke.co",
+				"name" : "sreerac",
+				"mailtolink" : "mailto:careers@kingspoke.co?subject=KINGSPOKE Careers"		
+			}
+			
+			
+		]
+	},
 	
 	
 	
