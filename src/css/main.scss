@@ -860,17 +860,24 @@ $arrow-base-size-mobile: $button-size/4;
 		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;
 			span.float-r {margin-left:60%}
 		}
-		h2 {@include playfair-bold(); color:$yellow; text-align:center; display:inline-block; position:relative; font-size:54px; text-transform:lowercase; z-index:2; margin:0 auto;
-			span {top:10px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:#999fdc; width:110%; display:block;}
+		.h2-wrapper {margin:0 auto; display:block; position:relative; text-align:center; margin-bottom:100px; margin-top:200px;
+			h2 {@include playfair-bold(); color:$yellow; text-align:center; display:inline; position:relative; font-size:44px; text-transform:lowercase; z-index:2; margin:0 auto;
+				span {
+					&.bold {@include montserrat-black();}
+					&.bar {top:35px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:#999fdc; width:110%; display:block;}
+					&.bar2 {top:0px; left:-50px; z-index:-1; height:60px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:#999fdc; width:90%; display:block; opacity:.5;}
+				}
+			}
+			
 		}
-		.four-oh-four {margin:50px auto; display:block; width:50%; text-align:Center;
-			p {display:inline; font-size:120px; @include playfair-bold(); 
-				&#first-4 {color:$yellow; padding-top:-50px;}
+		.four-oh-four {margin:50px auto; display:block; width:50%; text-align:Center; position:relative;
+			p {display:inline; font-size:200px; @include playfair-bold(); 
+				&#first-4 {color:$yellow; position:absolute; left:0; top:-20px; margin:0;}
 				&#o {color:green;
-					img.ks-logo {width:30%;}
+					img.ks-logo {width:200px;}
 	
 				}
-				&#second-4 {color:#fda5cc; margin-top:50px;}
+				&#second-4 {color:#fda5cc; margin-top:50px; @include montserrat-regular(); position:absolute; right:0; bottom:0; margin:0;}
 			}
 		}
 		.content-wrapper {}
