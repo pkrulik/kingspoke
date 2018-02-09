@@ -203,7 +203,7 @@ $arrow-base-size-mobile: $button-size/4;
 	    .col {width:30%; }
 	}	
 	
-	body {/* border:20px solid $white; */ overflow-x:hidden;}
+	body {border:20px solid $white; overflow-x:hidden;}
 	
 	p {@include montserrat-light(); font-size:18px; color: $black; line-height:28px;}
 	

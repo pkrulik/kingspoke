@@ -584,7 +584,7 @@
 						]
 					},
 
-					"nextProject": "../sbsi/index.html"
+					"nextProject": "../saco-biddeford-savings-institute/index.html"
 
 				}
 			},
@@ -621,7 +621,7 @@
 					"byline": "Amplifying an institution's deep level of caring within a relatively less-than-caring industry.",
 					"video": {
 						"display": true,
-						"poster": "http://via.placeholder.com/1920x1080?text=need+image+from+randy+cin+buns",
+						"poster": "../img/sbsi/sbsi-video-cover.jpg",
 						"link": "https://player.vimeo.com/external/252721709.hd.mp4?s=7352621743f95b34ff82b0e6af66a7cf57d8aaa4&profile_id=175"
 					},
 
