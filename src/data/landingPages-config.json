@@ -1,7 +1,7 @@
 [{
 		"pageName": "index",
 		"metadata" : {
-			"title" : "KINGSPOKE homepage",
+			"title" : "KINGSPOKE - Homepage",
 			"description" : "KINGSPOKE an independent creative agency based in portland maine ",
 			"imageTitle" : "KINGSPOKE Homepage Image",
 			"imageDescription" : "KINGSPOKE Homepage Image"
@@ -37,7 +37,7 @@
 	{
 		"pageName": "work",
 		"metadata" : {
-			"title" : "KINGSPOKE Work Page",
+			"title" : "KINGSPOKE - Work",
 			"description" : "KINGSPOKE - Case Studies",
 			"imageTitle" : "KINGSPOKE Case Study Image",
 			"imageDescription" : "KINGSPOKE Case Study Image"
@@ -50,7 +50,7 @@
 
 				"client": "Sterling Rope",
 				"metadata" : {
-					"title" : "KINGSPOKE Sterling Rope Case Study",
+					"title" : "KINGSPOKE - Sterling Rope Case Study",
 					"description" : "Sterling — Freedom to Focus",
 					"keywords" : "sterling rope, case study, video production",
 					"imageTitle" : "Sterling Case Study Image",
@@ -157,7 +157,7 @@
 
 				"client": "Fyt",
 				"metadata" : {
-					"title" : "KINGSPOKE FYT Case Study",
+					"title" : "KINGSPOKE - FYT",
 					"description" : "FYT - Move On",
 					"keywords" : "fyt protein water, branding, logo design, packaging, case study",
 					"imageTitle" : "Fyt Case Study Image",
@@ -271,7 +271,7 @@
 
 				"client": "Cole Haan",
 				"metadata" : {
-					"title" : "KINGSPOKE Cole Haan Case Study",
+					"title" : "KINGSPOKE - Cole Haan",
 					"description" : "COLE HAAN - The Art of Craft",
 					"keywords" : "cole haan, shoes, case study, video production, event production",
 					"imageTitle" : "Cole Haan Case Study Image",
@@ -380,7 +380,7 @@
 
 				"client": "HM Payson",
 				"metadata" : {
-					"title" : "KINGSPOKE HM Payson Case Study",
+					"title" : "KINGSPOKE - HM Payson",
 					"description" : "HM PAYSON - This is Trust",
 					"keywords" : "hm payson, case study, video production, branding, financial services, wealth management",
 					"imageTitle" : "HM Payson Case Study Image",
@@ -495,7 +495,7 @@
 
 				"client": "Foundation House",
 				"metadata" : {
-					"title" : "KINGSPOKE Foundation House Case Study",
+					"title" : "KINGSPOKE - Foundation House",
 					"description" : "FOUNDATION HOUSE - Recovery Elevated",
 					"keywords" : "foudnation house, sober living, branding, case study, video production",
 					"imageTitle" : "Foundation House Case Study Image",
@@ -598,7 +598,7 @@
 
 				"client": "Saco Biddeford Savings Institute",
 				"metadata" : {
-					"title" : "KINGSPOKE Saco Biddeford Savings Institute Case Study",
+					"title" : "KINGSPOKE - Saco Biddeford Savings Institute",
 					"description" : "SBSI - In It Together",
 					"keywords" : "saco biddeford savings institute, case study, video production, branding, advertising",
 					"imageTitle" : "Saco Biddeford Savings Institute Case Study Image",
@@ -708,7 +708,7 @@
 
 				"client": "Kingspoke",
 				"metadata" : {
-					"title" : "KINGSPOKE Spiritied Case Study",
+					"title" : "KINGSPOKE - Spiritied",
 					"description" : "KINGSPOKE's SPIRITED Series",
 					"keywords" : "kingsopke, sprited series, video production, website design, website development",
 					"imageTitle" : "KINGSPOKE Spirited Case Study Image",
@@ -829,7 +829,7 @@
 
 				"client": "Cole Haan",
 				"metadata" : {
-					"title" : "KINGSPOKE Cole Haan Case Study",
+					"title" : "KINGSPOKE - Cole Haan",
 					"description" : "COLE HAAN - Blue Sky 2017",
 					"keywords" : "cole haan, shoes, case study, video production, branding, event production",
 					"imageTitle" : "Cole Haan Case Study Image",

@@ -565,7 +565,7 @@ $arrow-base-size-mobile: $button-size/4;
 			
 			.beliefs {background:url("../../build/img/how/how-beliefs-bg.jpg"); background-size:cover; position:relative; overflow-y: visible;
 				img {
-					&#beach { position:absolute; bottom:-120px; right:40px; z-index:-1;}
+					&#beach { position:absolute; bottom:-120px; right:40px; z-index:-1; display:none;}
 				}
 				.yellow-box {  border:3px solid; position:absolute; border-color:$yellow; opacity:.2;	-webkit-animation: border-color-change 2s infinite alternate; -moz-animation: border-color-change 2s infinite alternate; -ms-animation: border-color-change 2s infinite alternate; -o-animation: border-color-change 2s infinite alternate; animation: border-color-change 2s infinite alternate;
 					&.big {height:500px; width:60%; left: 10%; top:-50px;}
@@ -626,7 +626,7 @@ $arrow-base-size-mobile: $button-size/4;
 				}
 			}
 			
-			.integrated-experiences {background:url("../../build/img/how/how-integrated-bg.jpg"); background-size:cover; position:relative; z-index:-1;
+			.integrated-experiences {background:url("../../build/img/how/how-integrated-bg.jpg"); background-size:cover; position:relative; z-index:-1; padding-bottom:100px;
 				.content-wrapper {padding:80px 250px 0px 70px; @include boxSizing();}
 				h2 {@include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2;
 					span {
@@ -641,7 +641,7 @@ $arrow-base-size-mobile: $button-size/4;
 					&.callout {font-size:30px; line-height:38px; margin-top:50px; @include montserrat-regular();}
 				}
 				
-				.venn-diagram-wrapper {width:650px; margin:0 auto; position:relative; height:610px; margin-bottom:100px;
+				.venn-diagram-wrapper {width:650px; margin:0 auto; position:relative; height:610px;
 					.circle {border:6px solid; position:absolute; border-radius:10000px; width:350px; height:350px;  padding:0 40px; @include transition(all, .25s, ease-in-out);
 						.circle-content-wrapper {@include verticalCenter(); position:relative; 
 							h3 {@include montserrat-bold(); text-align:center; margin:0 0 10px 0;}

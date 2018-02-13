@@ -607,6 +607,12 @@ jQuery(document).ready(function(event){
 	      console.log('.load')
 	       sr.sync();
 	       
+	       var pageTitle = $('h1').html().replace(/\b[a-z]/g, function(letter) {
+		   		return letter.toUpperCase();
+			});;
+	       
+	       document.title = "KINGSPOKE - " + pageTitle;
+	       
 	       // since we're ajaxing we need to get the user back to the top of the page
 	      window.scroll(0, 0);	      
 	      //if browser doesn't support CSS transitions - dont wait for the end of transitions

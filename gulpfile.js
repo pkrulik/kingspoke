@@ -102,8 +102,10 @@ var gulp = require('gulp'),
 	gulp.task('js', function() {
 		
 		return gulp.src('src/js/main.js')
+/*
 			.pipe(stripDebug())
 			.pipe( minify() )
+*/
 			.pipe(cachebust({type: 'timestamp'}))
 		    .pipe( gulp.dest('build/js') )
 		    .pipe( livereload() )
