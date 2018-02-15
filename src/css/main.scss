@@ -327,7 +327,7 @@ $arrow-base-size-mobile: $button-size/4;
 		.content-wrapper {padding:0 0px 0 150px; @include boxSizing();}
 	
 		.homepage-hero {overflow:hidden; position:relative;  /* background:#9ba0dd; */ @include boxSizing(); 
-			h1 {margin:0; font-size:90px; line-height:80px; max-width:80%; color:$black;   /* -webkit-mask-image: url("../../build/img/home/texture.png"); mask-image: url("../../build/img/home/texture.png"); -webkit-mask-size: 50%; -webkit-mask-position:center; */ opacity:.75;
+			h1 {margin:0; font-size:90px; line-height:80px; max-width:80%; color:$black;   /* -webkit-mask-image: url("../img/home/texture.png"); mask-image: url("../img/home/texture.png"); -webkit-mask-size: 50%; -webkit-mask-position:center; */ opacity:.75;
 				span {
 					&.subhead {@include playfair-regular(); display:block; font-size:30px; line-height:30px; margin-bottom:20px;}
 					&.h-line {width:110px; height:3px; background:$black; display:inline-block; position:absolute; top:17px; margin:0 5px;}
@@ -341,7 +341,7 @@ $arrow-base-size-mobile: $button-size/4;
 		}
 		
 		
-		.core-disciplines {@include boxSizing(); background:url("../../build/img/home/poster-we-create.jpg") no-repeat; background-size:cover; position:relative;
+		.core-disciplines {@include boxSizing(); background:url("../img/home/poster-we-create.jpg") no-repeat; background-size:cover; position:relative;
 			h3 {font-size:100px; line-height:100px; margin:0 0 30px 0 !important; position:relative; z-index:5;
 				span {
 					&.subhead {@include montserrat-black(); display:block; font-size:30px; line-height:30px; margin-bottom:20px; position:relative;}
@@ -392,7 +392,7 @@ $arrow-base-size-mobile: $button-size/4;
 		.content-wrapper {@include boxSizing(); padding:100px 70px 100px 70px;}
 	}
 	
-	#work {background:url("../../build/img/work/work-background-texture.jpg"); background-size:cover;
+	#work {background:url("../img/work/work-background-texture.jpg"); background-size:cover;
 		
 		
 		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;}
@@ -552,7 +552,7 @@ $arrow-base-size-mobile: $button-size/4;
 	#how-we-work { 
 			
 			h1 {font-size:90px; margin:20px 0; @include montserrat-black();}
-			.intro {position:relative; background:url("../../build/img/how/how-intro-bg.jpg"); background-size:cover;
+			.intro {position:relative; background:url("../img/how/how-intro-bg.jpg"); background-size:cover;
 				.content-wrapper {}
 				h2 {@include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2;
 					span {top:10px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:$yellow; width:110%; display:block;}
@@ -563,7 +563,7 @@ $arrow-base-size-mobile: $button-size/4;
 				
 			}
 			
-			.beliefs {background:url("../../build/img/how/how-beliefs-bg.jpg"); background-size:cover; position:relative; overflow-y: visible;
+			.beliefs {background:url("../img/how/how-beliefs-bg.jpg"); background-size:cover; position:relative; overflow-y: visible;
 				img {
 					&#beach { position:absolute; bottom:-120px; right:40px; z-index:-1; display:none;}
 				}
@@ -626,7 +626,7 @@ $arrow-base-size-mobile: $button-size/4;
 				}
 			}
 			
-			.integrated-experiences {background:url("../../build/img/how/how-integrated-bg.jpg"); background-size:cover; position:relative; z-index:-1; padding-bottom:100px;
+			.integrated-experiences {background:url("../img/how/how-integrated-bg.jpg"); background-size:cover; position:relative; z-index:-1; padding-bottom:100px;
 				.content-wrapper {padding:80px 250px 0px 70px; @include boxSizing();}
 				h2 {@include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2;
 					span {
@@ -668,7 +668,7 @@ $arrow-base-size-mobile: $button-size/4;
 				}
 			}
 			
-			.challenger-brands {background:url("../../build/img/how/how-challenger-bg.jpg") no-repeat; background-size:cover;
+			.challenger-brands {background:url("../img/how/how-challenger-bg.jpg") no-repeat; background-size:cover;
 				.content-wrapper {padding:80px 0px 100px 0px; @include boxSizing(); text-align:center; width:75%; margin:0 auto;}
 				h2 {font-style:italic; @include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2; text-align:center;
 					span {
@@ -700,9 +700,9 @@ $arrow-base-size-mobile: $button-size/4;
 
 	}
 	
-	#who-we-are {background:url("../../build/img/who/who-we-are-background.jpg") no-repeat; background-size:cover;
+	#who-we-are {background:url("../img/who/who-we-are-background.jpg") no-repeat; background-size:cover;
 			h1 {font-size:90px; margin:20px 0; @include montserrat-black();}
-		.intro {position:relative; margin-bottom:70px; // background:url("../../build/img/how/how-intro-bg.jpg"); background-size:cover; 
+		.intro {position:relative; margin-bottom:70px; // background:url("../img/how/how-intro-bg.jpg"); background-size:cover; 
 			
 			h2 {@include playfair-bold(); display:inline; position:relative; font-size:54px; text-transform:lowercase; z-index:2;
 				span {top:10px; left:-8px; z-index:-1; height:40px; @include transition(all, .25s, ease-in-out); display:block; position:absolute; background:$yellow; width:110%; display:block;}
@@ -785,7 +785,7 @@ $arrow-base-size-mobile: $button-size/4;
 		
 		.employee {width:100%; height:450px; position:relative; margin-bottom:150px;
 			
-			p.quote {word-spacing: 100vw; width:auto; -webkit-mask-image: url("../../build/img/who/who-texture.png"); mask-image: url("../../build/img/who/who-texture.png"); -webkit-mask-size: cover; -webkit-mask-position:0% 0%;  opacity:.25; @include transition(all, 1s, ease-in-out); margin:0; letter-spacing:-10px;font-size:200px; line-height:200px;  @include oswald(); text-transform: uppercase; z-index:10; position:absolute; font-style: italic;
+			p.quote {word-spacing: 100vw; width:auto; -webkit-mask-image: url("../img/who/who-texture.png"); mask-image: url("../img/who/who-texture.png"); -webkit-mask-size: cover; -webkit-mask-position:0% 0%;  opacity:.25; @include transition(all, 1s, ease-in-out); margin:0; letter-spacing:-10px;font-size:200px; line-height:200px;  @include oswald(); text-transform: uppercase; z-index:10; position:absolute; font-style: italic;
 				&.yellow {color:$yellow;}
 				&.pink {color:$pink;}
 				&.blue {color:$blue;}
@@ -820,7 +820,7 @@ $arrow-base-size-mobile: $button-size/4;
 	}
 	
 	
-	#contact {/* padding-top:100px; */ background:url("../../build/img/contact/contact-background-texture.jpg"); background-size:cover;
+	#contact {/* padding-top:100px; */ background:url("../img/contact/contact-background-texture.jpg"); background-size:cover;
 		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;}
 		.content-wrapper {}
 		.half-width {margin: 70px 0 !important; position:relative;
@@ -856,7 +856,7 @@ $arrow-base-size-mobile: $button-size/4;
 	}
 
 
-	#error {/* padding-top:100px; */ background:url("../../build/img/contact/contact-background-texture.jpg"); background-size:cover;
+	#error {/* padding-top:100px; */ background:url("../img/contact/contact-background-texture.jpg"); background-size:cover;
 		h1 {font-size:90px; @include montserrat-black(); margin:0 0px 50px 0;
 			span.float-r {margin-left:60%}
 		}
@@ -1026,7 +1026,7 @@ $arrow-base-size-mobile: $button-size/4;
 	}
 	
 	@media ( max-width : 1000px ){
-		footer {position:relative;
+		footer {position:relative; padding:20px 20px;
 			&.flex-two-col {display:block;}
 			img.vertical-center {text-align:center; margin:40px auto; position:relative; display:block; transform:none; width:80%;}
 			.details {text-align:center; width:100% !important;
